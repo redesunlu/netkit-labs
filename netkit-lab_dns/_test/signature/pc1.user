@@ -1,0 +1,12 @@
+-- 
+pc1.lugroma3.org.  IN A 192.168.0.111
+-- 
+lugroma3.org.  IN NS dnslug.lugroma3.org.
+-- 
+dnslug.lugroma3.org.  IN A 192.168.0.11
+-- 
+pc2.nanoinside.net.  IN A 192.168.0.222
+-- 
+nanoinside.net.  IN NS dnsnano.nanoinside.net.
+-- 
+.  IN SOA ROOT-SERVER. root.ROOT-SERVER. 2006031201 28800 14400 3600000 0
