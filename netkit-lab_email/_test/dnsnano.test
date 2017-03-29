@@ -1,0 +1,5 @@
+#!/bin/sh
+
+touch /hostlab/dnsnano.testdone
+sleep 20
+halt

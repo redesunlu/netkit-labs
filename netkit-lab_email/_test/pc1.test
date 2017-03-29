@@ -1,0 +1,40 @@
+#!/bin/sh
+
+sleep 5
+
+# Look for the mail exchanger for both domains
+dig MX nanoinside.net +short
+dig MX lugroma3.org   +short
+
+# Check for connectivity
+ping -c 1 mail.lugroma3.org | head -n -3 | sed 's/time=.*//'
+ping -c 1 imap.lugroma3.org | head -n -3 | sed 's/time=.*//'
+ping -c 1 pop.lugroma3.org | head -n -3 | sed 's/time=.*//'
+
+# Check for pine to start up properly
+/usr/local/bin/pine -h
+
+# Send an e-mail
+cat << END_OF_SCRIPT | expect >&/dev/null
+spawn telnet mail smtp
+expect "220 dnslug*"
+send "EHLO pc1.lugroma3.org\n"
+expect "Hello*"
+send "RSET\n"
+expect "Reset OK"
+send "MAIL FROM:<root@lugroma3.org>\n"
+expect "OK"
+send "RCPT TO:<guest@nanoinside.net>\n"
+expect "Accepted"
+send "DATA\n"
+expect "354*\n"
+send "Subject: Test mail\n"
+send "Test mail body.\n"
+send ".\n"
+expect "OK*"
+send "QUIT\n"
+expect "closing*"
+END_OF_SCRIPT
+
+touch /hostlab/pc1.testdone
+halt

@@ -1,0 +1,18 @@
+/sbin/ifconfig eth0 192.168.0.22 up
+chmod 755 /etc
+chmod 755 /etc/bind
+
+# Change permissions of the mail spool directory, so that the guest user is
+# allowed to write lock files.
+chmod a+w /var/spool/mail
+# Change permissions of the exim4 configuration file, to avoid errors due to
+# loose permissions
+chmod go-rw /etc/exim4/exim4.conf
+#
+# Adding guest user
+useradd guest
+echo "guest:guest" | chpasswd
+
+/etc/init.d/bind9 start
+/etc/init.d/exim4 start
+/etc/init.d/openbsd-inetd start

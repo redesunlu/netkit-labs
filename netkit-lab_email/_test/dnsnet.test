@@ -1,0 +1,5 @@
+#!/bin/sh
+
+touch /hostlab/dnsnet.testdone
+sleep 20
+halt

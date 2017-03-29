@@ -1,0 +1,54 @@
+[INTERFACES]
+
+eth0      Link encap:Ethernet  HWaddr 0a:c9:ed:ab:04:4d  
+          inet addr:192.168.0.5  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::8c9:edff:feab:44d/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+
+
+[ROUTE]
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+192.168.0.0     *               255.255.255.0   U         0 0          0 eth0
+
+[LISTENING PORTS]
+
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 192.168.0.5:53          0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:953           0.0.0.0:*               LISTEN     
+tcp6       0      0 ::1:953                 :::*                    LISTEN     
+udp        0      0 0.0.0.0:32768           0.0.0.0:*                          
+udp        0      0 192.168.0.5:53          0.0.0.0:*                          
+udp        0      0 127.0.0.1:53            0.0.0.0:*                          
+udp6       0      0 :::32769                :::*                               
+
+[PROCESSES]
+
+  UID COMMAND
+    0 init [2]       
+    0 [kthreadd]
+    0 [ksoftirqd/0]
+    0 [events/0]
+    0 [khelper]
+    0 [kblockd/0]
+    0 [pdflush]
+    0 [pdflush]
+    0 [kswapd0]
+    0 [aio/0]
+    0 [cifsoplockd]
+    0 [cifsdnotifyd]
+    0 /bin/sh /etc/init.d/rc 2
+    0 /sbin/syslogd
+    0 /sbin/klogd -x
+    0 /bin/bash /etc/rc2.d/S99netkit-phase2 start
+  103 /usr/sbin/named -u bind
+    0 /bin/bash /etc/init.d/netkit-test-phase
+    0 /bin/ps -e -o uid,command

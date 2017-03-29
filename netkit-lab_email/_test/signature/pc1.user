@@ -1,0 +1,72 @@
+5 mail.nanoinside.net.
+5 mail.lugroma3.org.
+PING mail.lugroma3.org (192.168.0.11) 56(84) bytes of data.
+64 bytes from dnslug.lugroma3.org (192.168.0.11): icmp_seq=1 ttl=64 
+
+PING imap.lugroma3.org (192.168.0.11) 56(84) bytes of data.
+64 bytes from dnslug.lugroma3.org (192.168.0.11): icmp_seq=1 ttl=64 
+
+PING pop.lugroma3.org (192.168.0.11) 56(84) bytes of data.
+64 bytes from dnslug.lugroma3.org (192.168.0.11): icmp_seq=1 ttl=64 
+
+Possible Starting Arguments for Pine program:
+
+ Argument	Meaning
+ <addrs>...	Go directly into composer sending to given address
+		List multiple addresses with a single space between them.
+		Standard input redirection is allowed with addresses.
+		Note: Places addresses in the "To" field only.
+ -attach <file>	Go directly into composer with given file
+ -attachlist <file-list>
+ -attach_and_delete <file>
+		Go to composer, attach file, delete when finished
+		Note: Attach options can't be used if -f, -F
+		added to Attachment list.  Attachlist must be the last
+		option on the command line
+ -bail		Exit if pinerc file doesn't already exist
+ -d n		Debug - set debug level to 'n', or use the following:
+ -d keywords...	flush,timestamp,imap=0..4,tcp,numfiles=0..31,verbose=0..9
+ -f <folder>	Folder - give folder name to open
+ -c <number>	Context - which context to apply to -f arg
+ -F <file>	File - give file name to open and page through and
+		forward as email.
+ -h 		Help - give this list of options
+ -k 		Keys - Force use of function keys
+ -z 		Suspend - allow use of ^Z suspension
+ -r 		Restricted - can only send mail to oneself
+ -sort <sort>	Sort - Specify sort order of folder:
+		       subject, arrival, date, from, size, /reverse
+ -i		Index - Go directly to index, bypassing main menu
+ -I <keystroke_list>   Initial keystrokes to be executed
+ -n <number>	Entry in index to begin on
+ -o 		ReadOnly - Open first folder read-only
+ -conf		Configuration - Print out fresh global configuration. The
+		values of your global configuration affect all Pine users
+		on your system unless they have overridden the values in their
+		pinerc files.
+ -pinerc <file>	Configuration - Put fresh pinerc configuration in <file>
+ -p <pinerc>	Use alternate .pinerc file
+ -P <pine.conf>	Use alternate pine.conf file
+ -x <config>	Use configuration exceptions in <config>.
+		Exceptions are used to override your default pinerc
+		settings for a particular platform, can be a local file or
+		a remote folder.
+ -v 		Version - show version information
+ -version	Version - show version information
+ -supported	List supported options
+ -url <url>	Open the given URL
+		Note: Can't be used if -f, -F
+		Standard input redirection is not allowed with URLs.
+		For mailto URLs, 'body='text should be used in place of
+		input redirection.
+ -create_lu <abook_file> <ab_sort_type>       create .lu from script
+ -copy_pinerc <local_pinerc> <remote_pinerc>  copy local pinerc to remote
+ -copy_abook <local_abook> <remote_abook>     copy local addressbook to remote
+ -convert_sigs -p <pinerc>   convert signatures to literal signatures
+ -<option>=<value>   Assign <value> to the pinerc option <option>
+		     e.g. -signature-file=sig1
+		     e.g. -color-style=no-color
+		     e.g. -feature-list=enable-sigdashes
+		     Note: feature-list is additive.
+		     You may leave off the "feature-list=" part of that,
+		     e.g. -enable-sigdashes

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+touch /hostlab/dnslug.testdone
+sleep 20
+halt

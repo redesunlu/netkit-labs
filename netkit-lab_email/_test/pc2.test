@@ -1,0 +1,41 @@
+#!/bin/sh
+
+sleep 5
+
+# Look for the mail exchanger for both domains
+dig MX nanoinside.net +short
+dig MX lugroma3.org   +short
+
+# Check for connectivity
+ping -c 1 mail.nanoinside.net | head -n -3 | sed 's/time=.*//'
+ping -c 1 imap.nanoinside.net | head -n -3 | sed 's/time=.*//'
+ping -c 1 pop.nanoinside.net | head -n -3 | sed 's/time=.*//'
+
+# Check for pine to start up properly
+/usr/local/bin/pine -h
+
+# Wait for the mail to be dispatched from pc1
+sleep 5
+
+# Receive the e-mail from pc1
+cat << END_OF_SCRIPT | expect 2>&1 | grep -i "test"
+spawn telnet mail imap
+expect OK
+send "0 AUTHENTICATE LOGIN\n"
+expect "+ *"
+send "Z3Vlc3Q=\n"
+expect "+ *"
+send "Z3Vlc3Q=\n"
+expect "OK"
+send "1 SELECT inbox\n"
+expect "SELECT completed"
+send "2 FETCH 1 BODY\[0\]\n"
+expect "FETCH completed"
+send "3 FETCH 1 BODY\[1\]\n"
+expect "FETCH completed"
+send "4 LOGOUT\n"
+expect "LOGOUT"
+END_OF_SCRIPT
+
+touch /hostlab/pc2.testdone
+halt
