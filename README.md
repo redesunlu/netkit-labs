@@ -11,4 +11,5 @@ Este repositorio cuenta con los siguientes laboratorios:
 
  * [Laboratorio de DNS](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_dns-TYR.tar.gz?raw=true): Es un fork con muy pocas modificaciones del [laboratorio oficial de DNS](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_dns/netkit-lab_dns.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
  * [Laboratorio de Email](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_email.tar.gz?raw=true): Es un fork con muy pocas modificaciones del [laboratorio oficial de Email](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_email/netkit-lab_email.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
+ * [Laboratorio de Proxy HTTP](https://github.com/redesunlu/netkit-labs/blob/master/tarballs/netkit-lab_proxy.tar.gz?raw=true): Es un fork con pocas modificaciones del [laboratorio oficial de Webserver](http://wiki.netkit.org/netkit-labs/netkit-labs_application-level/netkit-lab_webserver/netkit-lab_webserver.tar.gz) de Netkit, compatible para su uso con Netkit-NG.
 

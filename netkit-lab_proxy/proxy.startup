@@ -1,0 +1,19 @@
+ip addr add 169.254.0.30/24 dev eth0
+ip addr add 10.0.0.30/24 dev eth1
+ip link set dev eth0 up
+ip link set dev eth1 up
+echo "169.254.0.1 webserver" >> /etc/hosts
+service squid start
+
+# tareas para el estudiante
+# - habilitar el acceso a clientes mediante la edicion de squid.conf
+#   descomentando http_access allow localnet
+#   sed -i 's/\#http_access allow localnet/http_access allow localnet/' /etc/squid/squid.conf
+# - (opcionalmente) cambiar el puerto en que escucha el servidor proxy
+#   sed -i 's/http_port 3128/http_port 8080/' /etc/squid/squid.conf
+# - reiniciar el servidor squid
+#   service squid restart
+# - (opcionalmente) vaciar el contenido del cache de squid
+#   service squid stop
+#   squid -z
+#   service squid start
