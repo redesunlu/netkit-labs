@@ -1,0 +1,13 @@
+# Creating logging directory
+mkdir -p /var/log/zebra
+chown quagga:quagga /var/log/zebra
+
+# Fixing permissions
+chmod 755 /etc
+chmod 755 /etc/quagga
+
+
+/sbin/ifconfig eth0 100.0.0.1 netmask 255.255.255.0 up
+/sbin/ifconfig eth1 150.0.0.1 netmask 255.255.255.252 up 
+/etc/init.d/quagga start
+
