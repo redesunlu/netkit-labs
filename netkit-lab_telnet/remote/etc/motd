@@ -1,0 +1,10 @@
+=====================================================================
+Bienvenido al servidor en la Antártida.
+
+Continúe el ejercicio ejecutando el comando:
+
+    who && who | openssl dgst
+
+Copie y pegue la salida de este en la resolución de su práctica.
+=====================================================================
+

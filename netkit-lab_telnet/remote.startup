@@ -1,0 +1,8 @@
+ip link set eth0 up
+ip address add 172.16.0.10/24 dev eth0
+chmod +x /sbin/mingetty
+# required to enable root telnet login
+chmod 0640 /etc/shadow
+echo pts/0 >> /etc/securetty
+# el siguiente comando inicia el servidor inetd, que a su vez inicia el servidor Telnet
+service openbsd-inetd start
