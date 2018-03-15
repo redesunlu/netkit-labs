@@ -1,5 +1,7 @@
 ip link set eth0 up
 ip address add 172.16.0.10/24 dev eth0
+# add arbitrary delay (remember, this is a remote! host)
+tc qdisc add dev eth0 root netem delay 250ms
 chmod +x /sbin/mingetty
 # required to enable root telnet login
 chmod 0640 /etc/shadow
