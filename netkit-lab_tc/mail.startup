@@ -1,0 +1,7 @@
+ip address add 172.16.0.20/24 dev eth0
+ip link set eth0 up
+ip route add default via 172.16.0.99
+
+# start iperf on port 25 to enable "smtp port" bandwidth test
+iperf -s -p 25 &
+

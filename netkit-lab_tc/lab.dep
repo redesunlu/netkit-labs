@@ -1,0 +1,5 @@
+client: www mail database
+www: router
+mail: router
+database: router
+
