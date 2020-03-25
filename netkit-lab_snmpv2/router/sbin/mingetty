@@ -1,0 +1,27 @@
+#!/bin/sh
+
+IFNAME=eth0
+
+cat <<EOF
+=====================================================================
+Este equipo es un router, por lo que no tiene manera de conectarle
+un teclado. Para peor, no tiene interfaz web ni telnet habilitado.
+
+Pero puede controlarlo en forma remota mediante protocolo SNMP.
+
+Desde la NMS, determine la dirección IP de este router y utilice
+los comandos snmpget / snmpset / snmptable para monitorear y/o
+configurar este dispositivo mediante las community 'public' y
+'private'.
+
+Adicionalmente, si pulsa Enter en esta terminal, se forzará la
+pérdida de un enlace por un minuto. Al detectar este suceso, el
+router enviará automáticamente un TRAP a la estación de monitoreo.
+=====================================================================
+EOF
+read KEY
+echo -n "Forzando caida del enlace ${IFNAME} ..."
+ip link set dev ${IFNAME} down
+sleep 60
+echo "Restaurando el enlace ${IFNAME}"
+ip link set dev ${IFNAME} up

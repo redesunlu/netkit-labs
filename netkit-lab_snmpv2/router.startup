@@ -1,0 +1,10 @@
+chmod +x /sbin/mingetty
+ip address add 198.51.100.100/24 dev eth0   # link to host1
+ip link set eth0 up
+ip address add 203.0.113.100/24 dev eth1    # link to host2
+ip link set eth1 up
+ip address add 10.0.0.100/24 dev eth2       # network-management network
+ip link set eth2 up
+ip link set eth3 up   # useless dummy interface
+service snmpd start
+

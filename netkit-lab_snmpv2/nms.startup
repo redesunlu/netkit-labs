@@ -1,0 +1,5 @@
+ip address add 10.0.0.1/24 dev eth0
+ip link set eth0 up
+ip route add default via 10.0.0.100 dev eth0
+test -d /var/lib/snmp/mibs/ietf || dpkg -i /var/cache/apt/archives/*.deb
+
