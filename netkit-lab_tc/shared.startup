@@ -1,0 +1,3 @@
+# install netperf as it is not available on the current filesystem
+test -x /usr/bin/netperf || dpkg -i /netperf_2.4.4-6.1_i386.deb
+
