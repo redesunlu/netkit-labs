@@ -1,0 +1,11 @@
+startup_message off
+altscreen on
+shell /bin/bash 
+split
+focus top
+resize 8
+screen
+focus bottom
+screen watch --interval 0.5 'iptables -t nat -nL'
+focus top
+
