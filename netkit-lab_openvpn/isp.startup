@@ -1,0 +1,9 @@
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+ip link set eth0 up
+ip link set eth1 up
+ip address add 203.0.113.1/24 dev eth0    # link to CLIENT
+ip address add 198.51.100.1/24 dev eth1   # link to EVIL
+
+ip route add default via 198.51.100.200   # default via EVIL (inevitablemente pasa por alli)
+

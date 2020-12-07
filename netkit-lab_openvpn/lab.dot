@@ -1,0 +1,21 @@
+graph lab_openvpn {
+  rankdir="LR"
+  // pad=1
+  // rank="same"
+  bgcolor="#ffffff"
+  node [shape=square, fontname="arial bold",fontsize=16,style="filled",fillcolor="#ccffcc",width=1]
+  edge [minlen=2, len=2, fontname="arial", fontsize=14]
+  // mode="KK"
+
+  roadwarrior
+  isp
+  evil
+  rasvpn
+  appsrv
+
+  roadwarrior -- isp [taillabel=".100", label="A\n203.0.113.0/24", headlabel=".1"]
+  isp -- evil [taillabel=".1", label="B\n198.51.100.0/24", headlabel=".200"]
+  evil -- rasvpn [taillabel=".200", label="C\n192.0.2.0/24", headlabel=".99"]
+  rasvpn -- appsrv [taillabel=".99", label="D\n172.16.0.0/24", headlabel=".2"]
+
+}

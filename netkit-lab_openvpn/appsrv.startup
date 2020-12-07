@@ -1,0 +1,14 @@
+echo 0 > /proc/sys/net/ipv4/ip_forward
+
+ip link set eth0 up
+ip address add 172.16.0.2/24 dev eth0   # office network link
+
+ip route add default via 172.16.0.99         # default via RAS
+
+# add user
+test -d /home/titopuente || useradd -m -s /bin/bash titopuente
+echo titopuente:SEGURA-123 | chpasswd
+
+service apache2 start
+service openbsd-inetd start   # telnetd
+

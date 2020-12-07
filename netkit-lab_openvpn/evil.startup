@@ -1,0 +1,20 @@
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+ip link set eth0 up
+ip link set eth1 up
+ip address add 198.51.100.200/24 dev eth0   # link to ISP
+ip address add 192.0.2.200/24 dev eth1      # link to RAS
+
+ip route add default via 198.51.100.1       # default via ISP
+
+# ip route add 172.16.0.0/24 via 192.0.2.99   # ruta a red privada org (no deberia estar)
+
+# dsniff &                                  # a simple password sniffer
+# tshark -i eth0 -T fields -e telnet.data & # another basic sniffer
+
+# add another really simple sniffer
+test -x /usr/bin/ngrep || dpkg -i /packages/ngrep*.deb > /dev/null
+
+echo "exec ngrep -q  -W none -d eth0" > /usr/local/bin/sniff
+chmod +x /usr/local/bin/sniff
+

@@ -1,0 +1,8 @@
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+ip link set eth0 up
+ip link set eth1 up
+ip address add 192.0.2.99/24 dev eth0    # link to EVIL / Internet
+ip address add 172.16.0.99/24 dev eth1   # office network link
+
+ip route add default via 192.0.2.200    # default via EVIL (inevitablemente pasa por alli)

@@ -1,0 +1,4 @@
+# add TUN/TAP interface support for OpenVPN
+mkdir /dev/net
+mknod /dev/net/tun c 10 200
+
