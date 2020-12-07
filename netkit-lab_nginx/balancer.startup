@@ -1,0 +1,14 @@
+echo 0 > /proc/sys/net/ipv4/ip_forward
+
+ip link set eth0 up
+ip link set eth1 up
+ip address add 203.0.113.200/24 dev eth0   # link to ISP / Internet
+ip address add 10.1.1.200/24 dev eth1      # link to server farm / pool
+
+ip route add default via 203.0.113.1       # default via ISP
+
+# instalar nginx
+test -x /usr/sbin/nginx || ( dpkg --ignore-depends perl-base -i /packages/*.deb ) # && unlink /etc/nginx/sites-enabled/default )
+
+service nginx stop
+service apache2 start

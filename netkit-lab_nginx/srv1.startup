@@ -1,0 +1,10 @@
+echo 0 > /proc/sys/net/ipv4/ip_forward
+
+ip link set eth0 up
+ip address add 10.1.1.1/24 dev eth0   # link to server farm / pool
+
+# no default route
+
+echo "<small>esta respuesta viene de server1</small>" >> /var/www/index.html
+service apache2 start
+

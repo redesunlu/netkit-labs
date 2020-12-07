@@ -1,0 +1,18 @@
+graph lab_nginx {
+  rankdir="LR"
+  // pad=1
+  // rank="same"
+  bgcolor="#ffffff"
+  node [shape=square, fontname="arial bold",fontsize=16,style="filled",fillcolor="#ccffcc",width=1]
+  edge [minlen=2, len=2, fontname="arial", fontsize=14]
+  // mode="KK"
+
+  client, isp, balancer, srv1, srv2, srv3
+
+  client -- isp [taillabel=".100", label="A\n198.51.100.0/24", headlabel=".1"]
+  isp -- balancer [taillabel=".1", label="B\n203.0.113.0/24", headlabel=".200"]
+  balancer -- srv1 [taillabel="", label="", headlabel=".1"]
+  balancer -- srv2 [taillabel=".200", label="C\n10.1.1.0/24", headlabel=".2"]
+  balancer -- srv3 [taillabel="", label="", headlabel=".3"]
+
+}

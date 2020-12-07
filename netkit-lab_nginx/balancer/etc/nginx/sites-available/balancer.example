@@ -1,0 +1,39 @@
+server {
+  listen 80;        # escuchar en puerto 80
+  location / {      # reenviar todas las peticiones al pool
+    proxy_pass http://pool;
+  }
+}
+
+upstream pool {
+  # el bloque "upstream" define un grupo de servidores a los cuales se
+  # reenviarán las peticiones (en capa de aplicación)
+
+  # direcciones ip de las replicas
+  server 10.1.1.1:80 weight=3 max_fails=3 fail_timeout=10s;
+  server 10.1.1.2:80;
+  server 10.1.1.3:80;
+
+  # metodo de balanceo a usar (terminar la sentencia con punto y coma)
+  # ip_hash;
+
+  # posibles metodos de balanceo:
+  #     (para esta versión antigua de nginx; la moderna tiene muchos más)
+  #
+  # (no definido)
+  #     por defecto, las peticiones se distribuyen entre los servidores
+  #     utilizando un método de balanceo round-robin ponderado (weighted).
+  # ip_hash
+  #     las peticiones se distribuyen entre los servidores basándose
+  #     en un hash de la dirección IP del cliente; a un mismo cliente
+  #     lo atiende siempre el mismo servidor (salvo que se caiga)
+  # least_conn
+  #     la petición que ingresa se reenvía al servidor con el menor
+  #     número de conexiones activas, teniendo en cuenta la ponderación
+  #     (weight) de los servidores.
+  #
+  # Documentación:
+  # - https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/#method
+  # - https://nginx.org/en/docs/http/ngx_http_upstream_module.html#upstream
+
+}
