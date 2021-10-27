@@ -1,0 +1,2 @@
+# arregla el bug de iptables nf_conntrack.ko
+sh /shared/nf_patch.sh
