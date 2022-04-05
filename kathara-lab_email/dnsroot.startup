@@ -1,0 +1,4 @@
+ifconfig eth0 192.168.0.5 up
+chmod 755 /etc
+chmod 755 /etc/bind
+/etc/init.d/bind9 start
