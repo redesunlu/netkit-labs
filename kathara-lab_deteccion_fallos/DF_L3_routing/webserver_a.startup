@@ -1,0 +1,5 @@
+ip link set group default up
+/etc/init.d/networking stop; /etc/init.d/networking start
+service apache2 start
+
+

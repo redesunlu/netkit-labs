@@ -1,0 +1,5 @@
+ip link set group default up
+/etc/init.d/networking stop; /etc/init.d/networking start
+
+ ip route add 10.10.0.0/24 via 10.10.2.1
+ ip route add 10.10.4.0/24 via 10.10.3.2

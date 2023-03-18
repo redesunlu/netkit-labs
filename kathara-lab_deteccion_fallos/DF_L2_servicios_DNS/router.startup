@@ -1,0 +1,7 @@
+ip link set group default up
+/etc/init.d/networking stop; /etc/init.d/networking start
+
+
+#ip addr add dev eth0 10.10.0.1/24
+#ip addr add dev eth1 10.10.1.1/24
+#ip addr add dev eth2 10.10.2.1/24
