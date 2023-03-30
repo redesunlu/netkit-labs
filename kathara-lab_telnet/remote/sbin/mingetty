@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cat <<EOF
+=====================================================================
+Este servidor se encuentra en la Antártida y como usted no se encuen-
+tra allí, no tiene manera de acceder al teclado físico del equipo.
+
+Pero puede acceder en forma remota mediante protocolo telnet.
+Utilice el nombre de usuario 'root' y la clave 'ultrasecreta'.
+
+Tenga en cuenta dada la distancia entre el cliente y el servidor,
+habrá cierta demora al ingresar comandos y recibir respuestas.
+=====================================================================
+EOF
+read KEY
