@@ -1,6 +1,6 @@
 ip link set group default up
 /etc/init.d/networking stop; /etc/init.d/networking start
-service xinetd start
-
+sed -i 's/PIDFILE --exec \$DAEMON/PIDFILE --name \$NAME/' /etc/init.d/squid
+service squid start
 #ip addr add dev eth0 10.10.1.2/24
 #

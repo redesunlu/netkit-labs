@@ -1,0 +1,10 @@
+/etc/hosts
+127.0.0.1 localhost
+::1 localhost
+10.10.0.1 router
+10.10.0.2 host_a
+10.10.1.2 host_b
+10.10.2.2 host_c
+
+10.10.2.3 www.example.com
+
