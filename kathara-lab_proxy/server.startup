@@ -1,0 +1,7 @@
+# Fixing permissions
+chmod 755 /var
+chmod 755 /var/www
+
+ip addr add 169.254.0.1/24 dev eth0
+ip link set dev eth0 up
+service apache2 start
