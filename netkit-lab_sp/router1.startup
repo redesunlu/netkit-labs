@@ -1,5 +1,0 @@
-ip addr add 172.16.10.200/24 dev eth0
-ip addr add 200.24.95.1/24 dev eth1
-ip link set dev eth0 up
-ip link set dev eth1 up
-ip route add default via 200.24.95.43

@@ -1,6 +1,0 @@
-ip addr add 80.65.32.193/24 dev eth0
-ip link set dev eth0 up
-ip route add default via 80.65.32.76
-chmod 755 /etc
-chmod 755 /etc/bind
-/etc/init.d/bind9 start
