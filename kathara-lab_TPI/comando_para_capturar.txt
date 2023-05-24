@@ -1,0 +1,1 @@
+export fecha=$(date +%F_%H:%M:%S); echo "tshark -w captura_$fecha.pcap -f 'not ip6'" $(tshark -D 2> /dev/null | grep " kt-" | cut -d " " -f 2 | sed 's/^/-i /' | tr "\n" " " | sed 's/ *$//') > captura.sh ; bash captura.sh
