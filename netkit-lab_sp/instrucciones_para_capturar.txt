@@ -1,0 +1,10 @@
+Luego de iniciado el laboratorio, comience la captura desde el host utilizando el siguiente comando:
+
+export fecha=$(date +%F_%H:%M:%S); echo "tshark -w captura_$fecha.pcap -f 'not ip6'" $(tshark -D 2> /dev/null | grep " kt-" | cut -d " " -f 2 | sed 's/^/-i /' | tr "\n" " " | sed 's/ *$//') > captura.sh ; bash captura.sh
+Para recuperar la página, en pc1 ejecutar:
+
+Una vez iniciada la captura, desde pc1 recupere un recurso web utilizando un browser en modo texto (w3m) con el siguiente comando:
+
+w3m -F http://www.example.com
+
+Una vez recuperado el recurso, salga del navegador (Presione q, y) y por último detenga la captura en el host.
