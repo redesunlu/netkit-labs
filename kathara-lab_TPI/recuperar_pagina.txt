@@ -1,0 +1,3 @@
+Para recuperar la página, en pc1 ejecutar:
+
+w3m -4 -o accept_encoding='*;q=0' http://www.example.com

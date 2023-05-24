@@ -1,0 +1,5 @@
+ip addr add 200.24.95.43/24 dev eth0
+ip addr add 80.65.32.76/24 dev eth1
+ip addr add 80.64.34.1/24 dev eth2
+ip addr add 120.30.60.6/24 dev eth3
+ip route add 172.16.10.0/24 via 200.24.95.1

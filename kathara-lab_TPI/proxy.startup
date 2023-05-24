@@ -1,0 +1,9 @@
+ip addr add 200.24.95.77/24 dev eth0
+ip link set dev eth0 up
+ip route add 172.16.10.0/24 via 200.24.95.1
+ip route add default via 200.24.95.43
+sed -i 's/\#http_access allow localnet/http_access allow all/' /etc/squid/squid.conf
+#echo "cache deny all" >> /etc/squid/squid.conf
+rm -r /var/spool/squid/*
+squid -z
+service squid start
