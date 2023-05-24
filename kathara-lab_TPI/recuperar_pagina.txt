@@ -1,3 +1,7 @@
 Para recuperar la página, en pc1 ejecutar:
 
-w3m -4 -o accept_encoding='*;q=0' http://www.example.com
+w3m -F http://www.example.com
+
+o
+
+links -http-proxy proxy.tyr.org -html-frames 1 http://www.example.com/
