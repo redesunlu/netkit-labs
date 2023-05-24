@@ -1,0 +1,12 @@
+$TTL    60000
+@               IN      SOA     dns.tyr.org.    root.dns.tyr.org. (
+                        20200508 ; serial
+                        28 ; refresh
+                        14 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl
+                        )
+@               IN      NS      dns.tyr.org.
+dns		IN	A	172.16.10.130
+pc1		IN	A	172.16.10.27
+proxy		IN	A	200.24.95.77

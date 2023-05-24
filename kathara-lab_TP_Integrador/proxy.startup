@@ -1,0 +1,3 @@
+sed -i 's/\#http_access allow localnet/http_access allow all/' /etc/squid/squid.conf
+#rm -r /var/spool/squid/*
+#squid -z

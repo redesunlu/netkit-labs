@@ -1,0 +1,2 @@
+chmod 755 /etc
+chmod 755 /etc/bind

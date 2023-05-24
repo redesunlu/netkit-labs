@@ -1,5 +1,0 @@
-ip addr add 10.0.0.200/24 dev eth0
-ip addr add 10.1.0.99/24 dev eth1
-ip link set dev eth0 up
-ip link set dev eth1 up
-echo 1 > /proc/sys/net/ipv4/ip_forward

@@ -1,0 +1,2 @@
+chmod 755 /var
+chmod 755 /var/www
