@@ -1,1 +1,0 @@
-sed -i 's/\KeepAlive On/KeepAlive Off/' /etc/apache2/apache2.conf

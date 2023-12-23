@@ -1,6 +1,0 @@
-ip link set group default up
-/etc/init.d/networking stop; /etc/init.d/networking start
-service xinetd start
-
-#ip addr add dev eth0 10.10.1.2/24
-#
