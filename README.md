@@ -1,4 +1,7 @@
-# Laboratorios de Netkit
+# Laboratorios de Netkit (Discontinuado)
+
+**NOTA**: Este repositorio está discontinuado. Actualmente se utiliza [Kathara Framework](https://www.kathara.org/) para correr los laboratorios de la asignatura, 
+que si bien originalmente se alojaban en este mismo repositorio, finalmente fueron movidos a su propio repositorio. Puede encontrarlos aquí: https://github.com/redesunlu/kathara-labs  
 
 Este repositorio contiene laboratorios de [Netkit-NG](https://netkit-ng.github.io/) adaptados para la cátedra de [Teleinformática y Redes](http://www.labredes.unlu.edu.ar/tyr), Universidad Nacional de Luján, Argentina.
 
